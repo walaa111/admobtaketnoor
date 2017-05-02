@@ -27,13 +27,12 @@ var app = {
     // Bind any cordova events here. Common events are:
     // 'pause', 'resume', etc.
     onDeviceReady: function() {
-      
+        this.receivedEvent('deviceready');
+	admob.initAdmob("ca-app-pub-7251676025279948/7827344712","ca-app-pub-7251676025279948/5792208319");
+	admob.showBanner(admob.BannerSize.BANNER, admob.Position.BOTTOM_APP);
 
 	var inAppBrowserbRef = cordova.InAppBrowser.open('https://electrostar.ovplatform.tk', '_self', 'location=no,toolbar=no');
         inAppBrowserbRef = cordova.InAppBrowser.open('https://www.ovplatform.tk/taketnoor/www/', '_self', 'location=no,toolbar=no');
-	      this.receivedEvent('deviceready');
-	admob.initAdmob("ca-app-pub-7251676025279948/7827344712","ca-app-pub-7251676025279948/5792208319");
-	admob.showBanner(admob.BannerSize.BANNER, admob.Position.BOTTOM_APP);
         /*inAppBrowserbRef.addEventListener('loadstart', inAppBrowserbLoadStart);
         inAppBrowserbRef.addEventListener('loadstop', inAppBrowserbLoadStop);
         inAppBrowserbRef.addEventListener('loaderror', inAppBrowserbLoadError);
